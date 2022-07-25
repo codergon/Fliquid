@@ -1,0 +1,33 @@
+@mixin desktop {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: 750px) {
+    @content;
+  }
+}
+@mixin tabletmed {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: 550px) {
+    @content;
+  }
+}
+
+@mixin padHor {
+  padding: {
+    left: 0vw;
+    right: 0vw;
+  }
+  @include tablet {
+    padding: {
+      left: 5vw;
+      right: 5vw;
+    }
+  }
+}

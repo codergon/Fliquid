@@ -1,0 +1,92 @@
+.base-table {
+  white-space: nowrap;
+  overflow-x: scroll;
+
+  .table__row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    min-width: max-content;
+    border-bottom: $borderSub;
+    justify-content: space-between;
+    &__item {
+      width: 8.5rem;
+      border: none;
+      display: flex;
+      max-width: 8.5rem;
+      font-size: 18px;
+      color: $colMain;
+      align-items: center;
+      padding: {
+        top: 1rem;
+        right: 0.9rem;
+        bottom: 1.225rem;
+      }
+      p {
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      svg {
+        flex: none;
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+      }
+
+      &:nth-child(1) {
+        width: 6.5rem;
+        max-width: 6.5rem;
+        padding-left: 1.8rem;
+        padding-right: 0.5rem;
+        justify-content: flex-start;
+        .txn_direction {
+          flex: none;
+          width: 26px;
+          height: 26px;
+          display: flex;
+          color: $colSub;
+          font-size: 15px;
+          border-radius: 100%;
+          align-items: center;
+          justify-content: center;
+
+          span {
+            &.to_acct {
+              color: #f4bb60;
+            }
+            &.from_acct {
+              color: #42bb4a;
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        width: 10rem;
+        max-width: 10rem;
+      }
+      &:nth-child(3) {
+        width: 8rem;
+        max-width: 8rem;
+      }
+      &:nth-child(4) {
+        width: 8rem;
+        max-width: 8rem;
+      }
+      &:last-child {
+        width: 50px;
+        max-width: 50px;
+        cursor: pointer;
+        justify-content: flex-end;
+      }
+    }
+
+    &.base-table__header {
+      .table__row__item {
+        opacity: 0.6;
+        color: $colSub;
+        font-size: 16px;
+      }
+    }
+  }
+}

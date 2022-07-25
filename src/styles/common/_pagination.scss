@@ -1,0 +1,50 @@
+.pagination_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin: 40px 0px 10px;
+  justify-content: center;
+
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    border: $borderMain;
+    border-width: 1.5px;
+    border-radius: 12px;
+    align-content: center;
+    overflow: hidden;
+    &__item {
+      height: 40px;
+      display: flex;
+      opacity: 0.7;
+      cursor: pointer;
+      padding: 0px 15px;
+      align-items: center;
+      justify-content: center;
+      border-right: $borderMain;
+
+      &.nav-btn {
+        opacity: 1;
+        color: $colMain;
+        background: #333;
+
+        &[data-inactive="true"] {
+          opacity: 0.5;
+          color: $colSub;
+          cursor: not-allowed;
+          background: #111;
+        }
+      }
+
+      &[data-active="true"] {
+        color: #fff;
+        opacity: 1;
+        background: #5d71c1;
+      }
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}

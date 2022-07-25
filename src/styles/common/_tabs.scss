@@ -1,0 +1,212 @@
+.base-tabs {
+  display: flex;
+  max-width: 92vw;
+  align-items: center;
+  flex-direction: row;
+  margin: 20px auto 0px;
+  justify-content: space-between;
+
+  @include mobile {
+    margin-top: 10px !important;
+  }
+
+  .base-tabs__controls {
+    gap: 8px;
+    display: flex;
+    border-width: 2px;
+    width: max-content;
+    flex-direction: row;
+
+    &__btn {
+      gap: 5px;
+      flex: none;
+      height: 40px;
+      display: flex;
+      color: $colMain;
+      overflow: hidden;
+      padding: 5px 12px;
+      flex-direction: row;
+      align-items: center;
+      border: $borderMain;
+      border-width: 1.5px;
+      border-radius: 12px;
+
+      p {
+        display: none;
+      }
+      svg {
+        width: 16px;
+        height: 16px;
+        display: flex;
+        opacity: 0.8;
+        font-size: 18px;
+        stroke: $colMain !important;
+      }
+
+      &[data-active="true"] {
+        background: #080808;
+        p {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .action-btns {
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    &__btn {
+      gap: 5px;
+      flex: none;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      color: $colMain;
+      overflow: hidden;
+      flex-direction: row;
+      align-items: center;
+      border: $borderMain;
+      border-width: 1.5px;
+      border-radius: 12px;
+      justify-content: center;
+      svg {
+        width: 19px;
+        height: 19px;
+      }
+      &.search-btn {
+        border-radius: 100%;
+      }
+    }
+
+    .chain-switch {
+      position: relative;
+      flex-direction: column;
+      .action-btns__btn {
+        gap: 10px;
+        width: auto;
+        padding: 0px 10px;
+        i {
+          opacity: 0.6;
+          font-size: 14px;
+        }
+        svg {
+          width: 22px;
+          height: 22px;
+        }
+      }
+
+      .dropdown {
+        top: calc(100% + 5px);
+        width: 100%;
+        z-index: 9999;
+        background: $bg;
+        overflow: hidden;
+        position: absolute;
+        border-radius: 12px;
+        border: $borderMain;
+        border-width: 1.5px;
+        flex-direction: column;
+        button {
+          width: 100%;
+          border: none;
+          height: 45px;
+          border-radius: 0px;
+          border-bottom: $borderMain;
+          &.active {
+            background: #222;
+          }
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    .search-input {
+      gap: 5px;
+      flex: none;
+      height: 46px;
+      display: flex;
+      color: $colMain;
+      overflow: hidden;
+      padding: 5px 15px 5px 20px;
+      flex-direction: row;
+      align-items: center;
+      border: $borderMain;
+      border-width: 1px;
+      border-radius: 100%;
+      border-radius: 200px;
+      justify-content: center;
+      background: #080808;
+      input {
+        flex: 1;
+        height: 100%;
+        min-width: 190px;
+      }
+      i {
+        opacity: 0.4;
+        cursor: pointer;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .hide-tablet {
+    display: flex !important;
+  }
+  .show-tablet {
+    display: none !important;
+  }
+
+  @include tablet {
+    .hide-tablet {
+      display: none !important;
+    }
+    .show-tablet {
+      display: flex !important;
+    }
+
+    [data-search="true"] {
+      display: none !important;
+    }
+    [data-search-bar="true"] {
+      flex: 1 !important;
+      max-width: 500px;
+      display: flex !important;
+      transition: 4s all ease;
+    }
+    [data-search-bar-cover="true"] {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  .base-tabs__content {
+    margin-top: 44px;
+  }
+}
+
+.base-tag {
+  font-size: 12px;
+  color: #000;
+  padding: 4px 12px;
+  border-radius: 100vh;
+  width: max-content !important;
+
+  &--success {
+    @extend .base-tag;
+    background-color: #90ca94;
+  }
+
+  &--warning {
+    @extend .base-tag;
+    background-color: #b2a160;
+  }
+
+  &--error {
+    @extend .base-tag;
+    background: #e4a6a9;
+  }
+}

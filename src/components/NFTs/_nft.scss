@@ -1,0 +1,114 @@
+.nfts-container {
+  &__header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    min-width: max-content;
+    border-bottom: $borderSub;
+    justify-content: space-between;
+    &__item {
+      width: 100%;
+      display: flex;
+      color: $colSub;
+      font-size: 16px;
+      color: $colMain;
+      align-items: center;
+      flex-direction: row;
+      padding: 1rem 10px 1.225rem;
+      justify-content: space-between;
+      .small {
+        font-size: 14px;
+        margin: 2px 3px 0px;
+      }
+      .nft_total {
+        opacity: 0.6;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+      }
+      @include desktop {
+        padding: 1rem 4vw 1.225rem;
+      }
+    }
+  }
+
+  .nft-list {
+    width: 100%;
+    display: flex;
+    max-width: calc(92vw + 10px);
+    flex-wrap: wrap;
+    overflow: hidden;
+    flex-direction: row;
+    margin: 25px auto 0px;
+    .nft-list__item__cover {
+      padding: 0px 5px;
+      width: calc(100% / 6);
+      @media (max-width: 1135px) {
+        width: calc(100% / 5);
+      }
+      @media (max-width: 910px) {
+        width: calc(100% / 4);
+      }
+      @media (max-width: 715px) {
+        width: calc(100% / 3);
+      }
+      @include mobile {
+        width: calc(100% / 2);
+      }
+
+      .nft-list__item {
+        width: 100%;
+        border-radius: 12px;
+        border: $borderSub;
+        border-width: 1.8px;
+        margin-bottom: 15px;
+
+        .media {
+          width: 100%;
+          aspect-ratio: 1.2;
+          overflow: hidden;
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
+          img {
+            width: 100%;
+          }
+        }
+        .details {
+          display: flex;
+          font-size: 13px;
+          padding: 18px 15px 12px;
+          background: #141414;
+          background: #212121;
+          flex-direction: column;
+          border-bottom-left-radius: 12px;
+          border-bottom-right-radius: 12px;
+          .name {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 14px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+          .info {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+            .rank,
+            .estimated_value {
+              gap: 5px;
+              display: flex;
+              font-size: 14px;
+              color: $colMain;
+              flex-direction: column;
+              .title {
+                opacity: 0.6;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
