@@ -1,6 +1,7 @@
 import { useMoralis } from "react-moralis";
 import Icon from "../../components/common/Icon";
 import { isMobile } from "react-device-detect";
+import Footer from "../../components/layout/Footer";
 
 const Homepage = () => {
   const { authenticate, isAuthenticated, isAuthenticating } = useMoralis();
@@ -45,6 +46,12 @@ const Homepage = () => {
             <Icon.Metamask />
           </div>
         </div>
+
+        <div className="hero_image">
+          <img src="img/preview.png" alt="" />
+        </div>
+
+        <div className="slug">&nbsp;</div>
       </div>
     </>
   );

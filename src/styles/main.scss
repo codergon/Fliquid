@@ -56,7 +56,7 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
-  overflow: hidden;
+  // overflow: hidden;
   padding: 0px 5vw;
   text-align: center;
   align-items: center;
@@ -85,7 +85,7 @@ body {
     margin-bottom: 2.2rem;
     flex-direction: row;
     @include mobile {
-      margin-bottom: 80px;
+      margin-bottom: 50px;
     }
     svg {
       width: 50px;
@@ -102,6 +102,7 @@ body {
   .hero_text {
     width: 100%;
     color: $colMain;
+    // padding-bottom: 80px;
     align-items: center;
     flex-direction: column;
 
@@ -152,6 +153,24 @@ body {
       width: 25px;
       height: 25px;
     }
+  }
+
+  .hero_image {
+    width: 90%;
+    max-width: 800px;
+    margin: 0px auto;
+    margin-top: 50px;
+    border-radius: 20px;
+    border: $borderMain;
+    border-width: 2.5px;
+    img {
+      width: 100%;
+      border-radius: 20px;
+    }
+  }
+
+  .slug {
+    margin-top: 50px;
   }
 }
 
