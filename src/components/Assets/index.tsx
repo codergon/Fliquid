@@ -37,7 +37,7 @@ const Assets = () => {
                     <p className="value">{asset?.symbol}</p>
                   </div>
                   <div className="info">
-                    {millify(Number(asset?.balance) / Math.pow(10, 18), {
+                    {millify(Number(asset?.balance) / 1e18, {
                       precision: 3,
                     })}
                   </div>

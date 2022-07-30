@@ -61,7 +61,7 @@ export const rootSlice = createSlice({
               firstCond ? 4 + firstVal : secondCond ? 4 + secondVal : 4,
               firstCond ? 5 + firstVal : secondCond ? 5 + secondVal : 5,
             ]
-          : Array.from(Array(totalPages).keys());
+          : Array.from({ length: totalPages }, (_, i) => i + 1);
     },
 
     // Eth configurations

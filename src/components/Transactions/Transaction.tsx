@@ -36,7 +36,7 @@ const Transaction = ({ transaction, address }: TxnElementProps) => {
         <div className="table__row__item">
           <Asset.Ethereum />
           <p>
-            {millify(Number(transaction?.value) / Math.pow(10, 18), {
+            {millify(Number(transaction?.value) / 1e18, {
               precision: 3,
             })}
           </p>

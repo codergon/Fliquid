@@ -4,15 +4,14 @@ import { isMobile } from "react-device-detect";
 import Footer from "../../components/layout/Footer";
 
 const Homepage = () => {
-  const { authenticate, isAuthenticated, isAuthenticating } = useMoralis();
+  const { authenticate, logout, isAuthenticated, isAuthenticating } =
+    useMoralis();
 
   const login = async () => {
     if (!isAuthenticated) {
       try {
         await authenticate({
           signingMessage: "Authenticate Fliquid to sign in",
-          // type: "sol",
-
           provider: isMobile ? "walletConnect" : "metamask",
           mobileLinks: ["rainbow", "metamask", "trust"],
         }).catch((error) => {
@@ -23,6 +22,27 @@ const Homepage = () => {
       }
     }
   };
+
+  const solanaLogin = async () => {
+    if (!isAuthenticated) {
+      try {
+        await authenticate({
+          signingMessage: "Authenticate Fliquid to sign in",
+          type: "sol",
+        }).catch((error) => {
+          console.log(error);
+        });
+      } catch (error) {
+        alert(error);
+      }
+    }
+  };
+
+  // const loggy = async () => {
+  //   await logout();
+  // };
+
+  // loggy();
 
   return (
     <>
@@ -41,9 +61,15 @@ const Homepage = () => {
             connected accounts which are updated in realtime.
           </p>
 
-          <div className="connect_wallet" onClick={login}>
-            {isAuthenticating ? "Connecting Wallet..." : "Connect Wallet"}
-            <Icon.Metamask />
+          <div className="connect-btns-cover">
+            <div className="connect_wallet" onClick={login}>
+              Metamask
+              <Icon.Metamask />
+            </div>
+            <div className="connect_wallet" onClick={login}>
+              Phantom
+              <Icon.Phantom />
+            </div>
           </div>
         </div>
 
